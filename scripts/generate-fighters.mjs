@@ -8,6 +8,11 @@ const rootDir = path.resolve(__dirname, "..");
 const fightersDir = path.join(rootDir, "fighters");
 const rosterPath = path.join(rootDir, "assets/js/roster.js");
 
+const ASSET_VERSIONS = {
+  css: "890a82f8",
+  js: "9ee6c935"
+};
+
 async function loadRoster() {
   const source = await fs.readFile(rosterPath, "utf8");
   const match = source.match(/export const ROSTER\s*=\s*(\{[\s\S]*\});?\s*$/);
@@ -137,7 +142,7 @@ function buildFighterHtml(fighter, division) {
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap"
       />
     </noscript>
-    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <link rel="stylesheet" href="../assets/css/styles.min.css?v=${ASSET_VERSIONS.css}" />
   </head>
   <body data-page="fighter">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -189,15 +194,14 @@ function buildFighterHtml(fighter, division) {
                 ${buildSocialLinks(fighter.socials)}
               </div>
             </div>
-            <div class="fighter-hero__portrait">
-              <img
-                src="../${escapeHtml(fighter.img)}"
-                alt="${escapeHtml(fighter.imgAlt || fighter.name)}"
-                width="420"
-                height="520"
-                loading="lazy"
-              />
-            </div>
+              <div class="fighter-hero__portrait">
+                <img
+                  src="../${escapeHtml(fighter.img)}"
+                  alt="${escapeHtml(fighter.imgAlt || fighter.name)}"
+                  width="420"
+                  height="520"
+                />
+              </div>
           </div>
         </div>
       </section>
@@ -250,33 +254,33 @@ function buildFighterHtml(fighter, division) {
             </p>
           </div>
           <div class="footer__links" aria-label="Social links">
-            <a
-              class="footer__icon-link"
-              href="https://www.linkedin.com/in/<MY-USERNAME>/"
-              target="_blank"
-              rel="noopener"
-            >
-              <span class="sr-only">LinkedIn</span>
-              <img src="../assets/img/icons/linkedin.svg" alt="" aria-hidden="true" />
-            </a>
-            <a
-              class="footer__icon-link"
-              href="https://github.com/<MY-USERNAME>"
-              target="_blank"
-              rel="noopener"
-            >
-              <span class="sr-only">GitHub</span>
-              <img src="../assets/img/icons/github.svg" alt="" aria-hidden="true" />
-            </a>
-            <a
-              class="footer__icon-link"
-              href="https://www.instagram.com/<MY-USERNAME>/"
-              target="_blank"
-              rel="noopener"
-            >
-              <span class="sr-only">Instagram</span>
-              <img src="../assets/img/icons/instagram.svg" alt="" aria-hidden="true" />
-            </a>
+              <a
+                class="footer__icon-link"
+                href="https://www.linkedin.com/in/<MY-USERNAME>/"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="sr-only">LinkedIn</span>
+                <span class="footer__icon footer__icon--linkedin" aria-hidden="true"></span>
+              </a>
+              <a
+                class="footer__icon-link"
+                href="https://github.com/<MY-USERNAME>"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="sr-only">GitHub</span>
+                <span class="footer__icon footer__icon--github" aria-hidden="true"></span>
+              </a>
+              <a
+                class="footer__icon-link"
+                href="https://www.instagram.com/<MY-USERNAME>/"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="sr-only">Instagram</span>
+                <span class="footer__icon footer__icon--instagram" aria-hidden="true"></span>
+              </a>
           </div>
         </div>
         <div class="footer__bottom">
@@ -287,7 +291,7 @@ function buildFighterHtml(fighter, division) {
       </div>
     </footer>
 
-    <script type="module" src="../assets/js/main.min.js" defer></script>
+    <script type="module" src="../assets/js/main.min.js?v=${ASSET_VERSIONS.js}" defer></script>
   </body>
 </html>`;
 }
