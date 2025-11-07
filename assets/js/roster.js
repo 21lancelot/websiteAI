@@ -174,25 +174,25 @@ export const ROSTER = {
           socials: { ig: "https://www.instagram.com/islam_makhachev", tw: "" }
         },
         {
-          slug: "arman-tsarukyan",
-          name: "Arman Tsarukyan",
+          slug: "rafael-fiziev",
+          name: "Rafael Fiziev",
           rank: 2,
-          record: "22-3",
-          stance: "Orthodox",
-          height: "5'7\"",
-          reach: "72\"",
-          nationality: "Armenia",
-          gym: "American Top Team",
+          record: "13-3",
+          stance: "Switch",
+          height: "5'8\"",
+          reach: "71\"",
+          nationality: "Azerbaijan",
+          gym: "Kill Cliff FC",
           summary:
-            "Explosive wrestler-boxer who chains kicks and takedowns with relentless pace. Tsarukyan mixes crisp combinations with dominant mat returns, constantly forcing scrambles and breaking opponents’ rhythm.",
+            "Dynamic Muay Thai specialist with blistering speed, explosive kicks, and elite takedown defense. Fiziev mixes tight boxing with devastating body attacks and low kicks, maintaining constant pressure while countering with precision.",
           notableFights: [
-            "vs Charles Oliveira (UFC 300)",
-            "vs Beneil Dariush (UFC on ESPN 52)",
-            "vs Mateusz Gamrot (UFC on ESPN 37)"
+            "vs Rafael Dos Anjos (UFC Vegas 58)",
+            "vs Brad Riddell (UFC Vegas 44)",
+            "vs Justin Gaethje (UFC 286)"
           ],
-          img: "assets/img/fighters/arman-tsarukyan.webp",
-          imgAlt: "Arman Tsarukyan delivering a flying knee in the Octagon",
-          socials: { ig: "https://www.instagram.com/arm_011", tw: "" }
+          img: "assets/img/fighters/rafael-fiziev.webp",
+          imgAlt: "Rafael Fiziev posing confidently inside the Octagon",
+          socials: { ig: "https://www.instagram.com/rafael_ataman_fiziev", tw: "" }
         }
       ]
     },
